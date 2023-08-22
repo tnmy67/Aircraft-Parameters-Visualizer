@@ -1,0 +1,153 @@
+<html>
+<head>
+<title>Aircraft</title>
+  <link rel="icon" href="fav.ico" type="image/x-icon">
+  <script type="text/javascript">
+    function p(){
+        var WL,CL,FL,WA;
+        
+        WL = document.getElementById("WL").value;
+        WL = parseInt(WL)
+        CL = document.getElementById("CL").value;
+        CL = parseInt(CL)
+        FL = document.getElementById("FL").value;
+        FL = parseInt(FL)
+        WA=WL*CL
+        console.log("wing area is "+WA)
+        var CHT=0.5;
+        var SHT=(CHT*CL*WA)/FL;
+        var CVT=0.09;
+        var SVT=(CVT*WA*SHT)/FL;
+        console.log("horizantal tail area:"+SHT)
+        console.log("VERTICAL tail area:"+SVT)
+
+        if((WL>=6*CL && WL<=8*CL)&&(FL>=3*CL && FL<=5*CL)){
+            alert("STABLE"+"\nWing area is "+WA+"\nHorizantal tail area is  "+SHT+"\nVertical tail area is "+SVT);
+         }
+         else{
+     
+            alert("The Aircraft is UNSTABLE"+"\n Try the dimensions with given suggestions"+"\nSuggestion: Wing length:"+ CL*6 +"-"+ CL*8+ "\nFuselage length:"+ CL*3 +"-"+CL*5);
+           
+           
+         }
+
+        
+    }
+</script>
+<style>
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.bg {
+
+  background-image: url("https://lemonbin.com/wp-content/uploads/2020/06/airplane-june112020.jpg"),
+                    url("https://flyingmag.sfo3.digitaloceanspaces.com/flyingma/wp-content/uploads/2021/08/25160431/FLYBG20_Planes_003-1-1568x1046.jpg");
+
+  height: 80%;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-
+  repeat;
+  background-size: cover;
+}
+.tx
+{
+    text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 90px;
+    background: linear-gradient(
+        45deg,
+        #CA4246 16.666%, 
+        #E16541 16.666%, 
+        #E16541 33.333%, 
+        #F18F43 33.333%, 
+        #F18F43 50%, 
+        #8B9862 50%, 
+        #8B9862 66.666%, 
+        #476098 66.666%, 
+        #476098 83.333%, 
+        #A7489B 83.333%)
+  
+}
+body{
+background-color: rgb(68 64 60);
+color: rgb(254 243 200)
+}
+.ex {
+  text-decoration: overline underline;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+table, td, th {
+  border: 1px ;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td {
+  text-align: center;
+}
+
+
+</style>
+
+</head>
+<body>
+   
+
+  
+ <div class="bg"><h1 class="tx"><b>Aircraft Parameter Visualization System</b></h1></div>
+ <form name="fm">
+ <table align="center">
+ <tr ><td colspan=3 align="center">
+   <legend><h1 class="ex">PARAMETERS</h1></legend></td> 
+   
+   <tr>
+        <td><h3>Cord Length<h3></td><td><h3>Wing Length</h3></td><td><h3>Fuselage Length<h3></td></tr>
+      <br>
+		<tr><td><input type="number" class="CL" name=CL value="" id="CL"></input></td><td><input type="number" class="WL" name=WL value="" id="WL"></input></td><td><input type="number" class="FL" name=FL value="" id="FL"></input></td></tr>
+     <br>
+	<tr>
+        <td colspan="3"></td>
+    </tr>
+    <tr>
+        <td colspan="3"></td>
+    </tr>
+		<tr>
+        <td colspan=3 align="center"> <input type="button" value="Click me to verify" onClick="p()">
+
+		</td></tr>
+			
+		</table>
+        <br>
+        <br>
+    </form>
+
+        <table>
+            <tr>
+                <td align="center"><img src="images.jpeg" width="50%"></td>
+                <td>
+                <table>
+                    <tr>
+                        <td colspan="3"><h3>The main exterior parts for the single engine aviation aircraft are as follows</h3><br></td></tr>
+                        <tr>
+                            <td><h4>Fuselage</h4></td><td><h6>:</h6></td><td><h5>It is the main body part of an aircraft and it is connected to all the parts of the aircraft</h5></td></tr>
+                <tr>
+                    <td><h4>Wings</h4></td><td><h6>:</h6></td><td><h5>It is used to generate lift to the aircraft</h5> </td></tr>
+                <tr>
+                    <td><h4>Empennage</h4></td><td><h6>:</h6></td><td><h5>This is situated at the backkside of the aircraft it is responsible for the verticle and horizontal lift to the aircraft</h5></td></tr>
+                <tr><td><h4>Landing gears</h4></td><td><h6>:</h6></td><td><h5>It is responsible for the takeoff and landing for the aircraft</h5></td></tr>
+                <tr><td><h4>Power-plant</td><h4><td><h6>:</h6></td><td><h5>It is used to provide thrust and also operats aircraft</h5></td></tr>
+             </td>
+		</tr>
+        </table>
+        <script src="meciajs.js"></script>
+   </body>
+</html>
